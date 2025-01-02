@@ -9,8 +9,9 @@ export function shallowEquals<T>(objA: T, objB: T): boolean {
     objA === null ||
     typeof objB !== "object" ||
     objB === null
-  )
+  ) {
     return false;
+  }
 
   // 3. 객체의 키 개수가 다른 경우 처리
   const keysA = Object.keys(objA) as (keyof T)[];
@@ -27,6 +28,5 @@ export function shallowEquals<T>(objA: T, objB: T): boolean {
     }
   }
 
-  // 이 부분을 적절히 수정하세요.
   return true;
 }
